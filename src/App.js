@@ -9,20 +9,36 @@ import Experience from "./components/ExperienceContainer"
 import Privat from "./components/Privat"
 import { BrowserRouter as Router, Route, Link } from "react-router-dom";
 
-function App() {
-  return (
-    <Router>
-      <div>
-        <Header />
-        <Route exact path="/" component={Home}/>
-        <Route exact path="/Skills" component={Skills} />
-        <Route path="/Education" component={Education} />
-        <Route path="/Experience" component={Experience}/>
-        <Route path="/Privat" component={Privat} />
-        <Footer />
-      </div>
-    </Router>
-  );
+
+class App extends React.Component{
+  constructor(){
+    super()
+    this.changebg = this.changebg.bind(this)
+  }
+
+  componentDidMount() {
+    document.body.classList.add("whitesmoke");
+  }
+
+  changebg(color){
+    document.body.classList.add(color)
+  }
+
+  render(){
+    return (
+        <Router>
+          <div>
+            <Header changebg = {this.changebg} />
+            <Route exact path="/" component={Home}/>
+            <Route exact path="/Skills" component={Skills}/>
+            <Route exact path="/Education" component={Education}  />
+            <Route path="/Experience" component={Experience}/>
+            <Route path="/Privat" component={Privat} />
+            <Footer />
+          </div>
+        </Router>
+    );
+  }
 }
 
 export default App;

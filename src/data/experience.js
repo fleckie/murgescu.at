@@ -1,7 +1,7 @@
 const experienceData = [
     {
         id: 1,
-        stateCounter: 0,
+        visibility : "start",
         name: "Advanced Agent",
         timeframe: "07/2018 - 12/2018",
         location: "ITSV GsmbH Wien",
@@ -10,7 +10,7 @@ const experienceData = [
     },
     {   
         id: 2,
-        stateCounter: 0,
+        visibility : "start",
         name: "Praktikant Projektmanagement",
         timeframe: "12/2016",
         location: "Call Now Telekommunikationsservice GmbH Wien",
@@ -18,7 +18,7 @@ const experienceData = [
     },
     {   
         id: 3,
-        stateCounter: 0,
+        visibility : "start",
         name:"Second Level Support Agent",
         timeframe:"08/2015 - 04/2016",
         location: "Samsung Electronics Austria // Competence Call Center GmbH Wien",
@@ -27,15 +27,15 @@ const experienceData = [
     },
     {
         id: 4,
-        stateCounter: 0,
+        visibility : "start",
         name:"Persönliche Assistenz",
         timeframe: "11/2013 - 12/2014",
-        location: "Wien",
-        description: "Für einen Rollstuhlfahrer"
+        location: "für einen Rollstuhlfahrer in Wien",
+        description: ""
     },
     {
         id:5,
-        stateCounter: 0,
+        visibility : "start",
         name:"Projektmitarbeiter Standortverwaltung",
         timeframe:"03/2011 - 09/2011",
         location:"Gewista Werbegesellschaft BH Wien",
@@ -43,7 +43,7 @@ const experienceData = [
     },
     {
         id:6,
-        stateCounter: 0,
+        visibility : "start",
         name:"Promoter",
         timeframe:"01/2009 - 12/2009 ",
         location:"Talk2Move Personalmanagement GmbH",

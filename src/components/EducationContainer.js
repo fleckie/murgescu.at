@@ -50,6 +50,20 @@ class Education extends React.Component{
         } ,0,id)
     }
 
+
+    
+    componentDidMount() {
+        this.setState(prevState =>{
+            const updatedState = prevState.itemList.map(item =>{
+                item.stateCounter = 0
+                return item
+            })
+            return {
+                itemList: updatedState
+            }
+        })
+    }
+
     render(){
         const items = this.state.itemList.map(item => <EducationComponent key={item.id} item={item} handleChange ={this.handleChange} />)
         return(

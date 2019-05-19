@@ -7,7 +7,8 @@ class Experience extends React.Component{
     constructor(){
         super();
         this.state = {
-            itemList: data
+            itemList: data,
+            focused: false
         }
         this.handleChange = this.handleChange.bind(this)
     }
@@ -18,26 +19,32 @@ class Experience extends React.Component{
                 const updatedData = prevState.itemList.map(item =>{
                     if(item.id === id){
                        
-                        if (item.stateCounter === 0){
+                        if (item.visibility === "start"){
                      
-                            item.stateCounter = 1
+                            item.visibility = "focused"
                             
                         }
-                        else if (item.stateCounter %2 === 0){
-                            item.stateCounter = 1
-                            console.log(item.stateCounter)
+                        else if (item.visibility === "focused"){
+                            item.visibility = "rewind"
                         }
-                        else if (item.stateCounter %2 === 1){
-                            item.stateCounter = 2
+                        else if (item.visibility === "rewind"){
+                            item.visibility = "focused"
                 
                         }
                     }
                     else {
-                        if(item.stateCounter === 0){
-                            item.stateCounter = 0
+                        if(item.visibility === "start"){
+                            item.visibility = "hidden"
                         }
-                        else {
-                            item.stateCounter = 2
+                        else if (item.visibility === "focused") {
+                            item.visibility = "rewind"
+                        }
+                        else if (item.visibility === "hidden"){
+                            item.visibility = "start"
+                        }
+                        else if (item.visibility === "rewind"){
+                            item.visibility = "hidden"
+
                         }
                       
                     }
@@ -50,11 +57,28 @@ class Experience extends React.Component{
 
         } ,0,id)
     }
+   
+
+    componentDidMount() {
+        this.setState(prevState =>{
+            const updatedState = prevState.itemList.map(item =>{
+                item.visibility = "start"
+                return item
+            })
+            return {
+                itemList: updatedState,
+                focused: true
+            }
+        })
+    }
 
     render(){
+        const style = {
+         
+        }
         const items = this.state.itemList.map(item => <ExperienceComponent key={item.id} item={item} handleChange ={this.handleChange} />)
         return(
-            <div className="expContainer">
+            <div className="expContainer" style={style}>
             {items}
             </div>
         )

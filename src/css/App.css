@@ -1,4 +1,26 @@
 *{
-  background-color: whitesmoke;
   padding: 5px;
+}
+
+.blue{
+  animation: turnblue 1s linear both;
+}
+
+.whitesmoke{
+  background-color: whitesmoke
+}
+
+.red{
+  background-color: greenyellow 
+}
+
+
+
+@keyframes turnblue {
+  0% {
+    background: white;
+  }
+  100%{
+    background: skyblue
+  }
 }
