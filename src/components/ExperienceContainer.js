@@ -13,6 +13,7 @@ class Experience extends React.Component{
         this.handleChange = this.handleChange.bind(this)
     }
 
+
     handleChange(id){
         setTimeout(() =>{
             this.setState(prevState =>{
@@ -70,9 +71,13 @@ class Experience extends React.Component{
                 focused: true
             }
         })
+       
+        //this.props.changeBackground("yellowgreen", "exp");
     }
 
+  
     render(){
+      
         const style = {
          
         }

@@ -14,9 +14,13 @@ function Header(props){
                     <Link to ="/" className="murgescu" >Murgescu.at</Link>
                 </div>
                 <div>
-					<Link to ="/Skills" onClick={props.changebg("red")}> IT Skills </Link>
-					<Link to ="/Education" onClick={props.changebg("blue")}>Ausbildung</Link>
-					<Link to ="/Experience">Berufserfahrung</Link>
+					<Link to ="/Skills"> IT Skills </Link>
+					<Link to ="/Education"  
+                    //onClick={() => props.changeBackground("lightgreen", "edu")}
+                     >Ausbildung</Link>
+					<Link to ="/Experience" 
+                    //onClick={() => props.changeBackground("yellowgreen", "exp")}
+                    >Berufserfahrung</Link>
                     <Link to ="/Privat"> Privates </Link>
                 </div>
             </nav>

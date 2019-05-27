@@ -4,6 +4,7 @@
   margin-top: 5%;
   overflow: hidden;
   z-index: 1;
+  position: absolute;
 }
 
 
@@ -20,6 +21,7 @@
   float: left;
   border-left-style: dashed;
   border-right-style: dashed;
+  overflow:hidden;
 }
 
 .expDescription {
@@ -230,15 +232,6 @@ h1, h2, h3 {
     scale(1.2)
   }
 }
-
-@keyframes fade-to-red {
-  0%{
-  }
-  100%{
-    background: red;
-  }
-}
-
 
 
 
