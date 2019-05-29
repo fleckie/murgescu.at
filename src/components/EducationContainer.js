@@ -50,8 +50,6 @@ class Education extends React.Component{
         } ,0,id)
     }
 
-
-    
     componentDidMount() {
         this.setState(prevState =>{
             const updatedState = prevState.itemList.map(item =>{
@@ -64,8 +62,6 @@ class Education extends React.Component{
         })
         //this.props.changeBackground("lightgreen", "edu");
     }
-
-  
 
     render(){
         

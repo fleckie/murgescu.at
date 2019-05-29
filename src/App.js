@@ -16,53 +16,89 @@ class App extends React.Component {
       super()
       this.state = {
         color: "whitesmoke",
-        active: "home"
+        active: "home",
+        toggleContent: true
   
       }
       this.changeBackground = this.changeBackground.bind(this)
+      this.toggleContent = this.toggleContent.bind(this)
     }
-
+    
     changeBackground(newBackground, activePage){
-      var background = document.querySelector("*");
-      background.style.background = this.state.color;
+     var root = document.querySelector(":root");
+     //root.style.background = this.state.color;
       this.setState(prevState =>{
         return {
           color: newBackground,
           active: activePage
         }
       })
-      background.style.animation = this.state.active + " 0.5s linear both";
+      root.style.setProperty('--newBGC', this.state.color);
+      console.log(this.state.color);
+      var rootStyles = getComputedStyle(root);
+      var bgc = rootStyles.getPropertyValue('--newBGC');
+      console.log(bgc);
+      root.style.animation = "changeBackgroundColor 0.5s linear both";
     }
 
-
+    toggleContent(){
+      var w = Math.max(document.documentElement.clientWidth, window.innerWidth || 0);
+      this.setState(prevState => {
+        if (w<1100){
+          return {
+            toggleContent: !prevState.toggleContent
+          }
+        }
+        
+      })
+    }
 
     render(){
+
+
+    let contentVisibility
+    if (this.state.toggleContent){
+        contentVisibility = {
+          display: "initial"
+        }
+    }
+    else {
+        contentVisibility = {
+          display: "none"
+        }
+    }
+
       return (
         <div>
-          <Header changeBackground = {this.changeBackground} />
-          <TransitionGroup>
-          <CSSTransition
-          in = {true}
-          appear = {true}
-          key = {this.props.location.key}
-          classNames = "page-fade"
-          timeout = {600}>
-            <Switch location={this.props.location}>
+          <Header 
+          changeBackground = {this.changeBackground}
+          toggleContent = {this.toggleContent}
+           />
+          <div style={contentVisibility}>
+            <TransitionGroup>
+            <CSSTransition
+            in = {true}
+            appear = {true}
+            key = {this.props.location.key}
+            classNames = "page-fade"
+            timeout = {600}>
+              <Switch location={this.props.location}>
 
-                <Route exact path="/" component={Home}/>
+                  <Route exact path="/" component={Home}/>
 
-                <Route exact path="/Skills" component={Skills}/>
+                  <Route exact path="/Skills" component={Skills}/>
 
-                <Route exact path="/Education"  render={(routeProps) => (
-                  <Education changeBackground = {this.changeBackground} /> )}  />
+                  <Route exact path="/Education"  render={(routeProps) => (
+                    <Education changeBackground = {this.changeBackground} /> )}  />
 
-                <Route path="/Experience" render={(routeProps) => (
-                  <Experience changeBackground = {this.changeBackground} /> )}  />
+                  <Route path="/Experience" render={(routeProps) => (
+                    <Experience changeBackground = {this.changeBackground} /> )}  />
 
-                <Route path="/Privat" component={Privat} />
-              </Switch>
-          </CSSTransition>
-          </TransitionGroup>
+                  <Route path="/Privat" component={Privat} />
+                </Switch>
+            </CSSTransition>
+            </TransitionGroup>
+          </div>
           <Footer />
         </div>
   

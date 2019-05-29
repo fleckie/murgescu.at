@@ -13,7 +13,6 @@ class Experience extends React.Component{
         this.handleChange = this.handleChange.bind(this)
     }
 
-
     handleChange(id){
         setTimeout(() =>{
             this.setState(prevState =>{
@@ -50,7 +49,7 @@ class Experience extends React.Component{
                       
                     }
                     return item
-                })
+                })  
                 return{
                     itemList: updatedData
                 }

@@ -4,8 +4,30 @@ function EducationComponent(props){
 
     // eventuell hier animation definieren und Y-Verschiebung über id * Faktor lösen
     
-    
+    var w = Math.max(document.documentElement.clientWidth, window.innerWidth || 0);
     let containerStyle
+
+    if (w < 1100){
+        switch (props.item.stateCounter) {
+            case 0:
+                containerStyle = {
+                    animation: "edu-slide-in-bottom 1s cubic-bezier(0.250, 0.460, 0.450, 0.940) 0.5s both",
+                    animationDelay: props.item.id/4 + "s",
+                }
+                break;
+            case 1:
+                containerStyle = {
+                    animation: "move-mid 1s ease both"
+                }
+                break;
+            case 2: {
+                containerStyle = {
+                    animation: "move-back 1s ease both"
+                }
+            }
+        }
+    }
+    else {
         if (props.item.stateCounter === 0){
             containerStyle = {
                 animation: "edu-slide-in-bottom 1s cubic-bezier(0.250, 0.460, 0.450, 0.940) 0.5s both",
@@ -23,7 +45,9 @@ function EducationComponent(props){
                 animation: "edu-move-left" + props.item.id + " 1s ease",
                 animationDirection: "reverse"
             }
-        }
+        }   
+    }
+        
         
     return(
         <div className="eduInnerCard" 

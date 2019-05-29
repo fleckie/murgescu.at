@@ -1,3 +1,12 @@
+:root {
+  --oldBGC: red;
+  --newBGC: green;
+}
+
+:root {
+  background: whitesmoke;
+}
+
 *{
   padding: 5px;
 }
@@ -61,3 +70,23 @@
     background: yellowgreen
   }
 }
+
+@keyframes changeBackgroundColor{
+  0%{
+  }
+  100%{
+    background: var(--newBGC);
+  }
+}
+
+@keyframes test{
+  0%{
+    background: red;
+  }
+  100%{
+    background:green;
+  }
+}
+
+
+  
