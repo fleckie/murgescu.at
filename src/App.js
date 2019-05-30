@@ -15,33 +15,15 @@ import {
   withRouter
 } from "react-router-dom";
 import { TransitionGroup, CSSTransition } from "react-transition-group";
+import backgroundTransition from "./js/BackgroundTransition";
 
 class App extends React.Component {
   constructor() {
     super();
     this.state = {
-      color: "whitesmoke",
-      active: "home",
       toggleContent: true
     };
-    this.changeBackground = this.changeBackground.bind(this);
     this.toggleContent = this.toggleContent.bind(this);
-  }
-
-  changeBackground(newBackground, activePage) {
-    var root = document.querySelector(":root");
-    this.setState(prevState => {
-      return {
-        color: newBackground,
-        active: activePage
-      };
-    });
-    root.style.setProperty("--newBGC", this.state.color);
-    console.log(this.state.color);
-    var rootStyles = getComputedStyle(root);
-    var bgc = rootStyles.getPropertyValue("--newBGC");
-    console.log(bgc);
-    root.style.animation = "changeBackgroundColor 0.5s linear both";
   }
 
   toggleContent() {
@@ -58,8 +40,14 @@ class App extends React.Component {
     });
   }
 
-  render() {
+  componentDidUpdate(prevProps) {
+    if (this.props.location !== prevProps.location) {
+      var location = this.props.location.pathname;
+      backgroundTransition(location);
+    }
+  }
 
+  render() {
     let contentVisibility;
     if (this.state.toggleContent) {
       contentVisibility = {
@@ -71,11 +59,8 @@ class App extends React.Component {
       };
     }
     return (
-      <div>
-        <Header
-          changeBackground={this.changeBackground}
-          toggleContent={this.toggleContent}
-        />
+      <div className="test">
+        <Header toggleContent={this.toggleContent} />
         <div style={contentVisibility}>
           <TransitionGroup>
             <CSSTransition
@@ -87,25 +72,9 @@ class App extends React.Component {
             >
               <Switch location={this.props.location}>
                 <Route exact path="/" component={Home} />
-
                 <Route exact path="/Skills" component={Skills} />
-
-                <Route
-                  exact
-                  path="/Education"
-                  render={routeProps => (
-                    <Education changeBackground={this.changeBackground}
-                    />
-                  )}
-                />
-
-                <Route
-                  path="/Experience"
-                  render={routeProps => (
-                    <Experience changeBackground={this.changeBackground} />
-                  )}
-                />
-
+                <Route exact path="/Education" component={Education} />
+                <Route path="/Experience" component={Experience} />
                 <Route path="/Privat" component={Privat} />
               </Switch>
             </CSSTransition>

@@ -76,9 +76,6 @@ class Education extends React.Component{
                 itemList: updatedState
             }
         })
-
-
-        //this.props.changeBackground("lightgreen", "edu");
     }
 
     render(){

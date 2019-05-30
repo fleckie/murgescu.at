@@ -50,8 +50,6 @@ function ExperienceComponent(props) {
         animation: "fade-out 0.5s ease both",
         zIndex: "-2",
         pointerEvents: "none"
-     
-          
       };
     }
   }

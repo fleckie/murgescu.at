@@ -1,13 +1,8 @@
 import React from "react"
 
 function EducationComponent(props){
-
-   
-    
     var w = Math.max(document.documentElement.clientWidth, window.innerWidth || 0);
     let containerStyle
-
-
     if (w < 1100){
         switch (props.item.status) {
             case "start":
@@ -48,10 +43,7 @@ function EducationComponent(props){
             
         }   
     }
-        
-        
     return(
-        
         <div className="eduInnerCard" 
         onClick ={() => props.handleChange(props.item.id)}
         style= {containerStyle}>
@@ -59,11 +51,9 @@ function EducationComponent(props){
             <h1> {props.item.name} </h1>
             <h3> {props.item.location}</h3>
             {props.item.status === "focused" && 
-                    <p className="eduDescription">{props.item.description}</p>
-                }
-    
+                <p className="eduDescription">{props.item.description}</p>
+            }
         </div>
     )
 }
-
 export default EducationComponent

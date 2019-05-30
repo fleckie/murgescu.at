@@ -55,10 +55,10 @@ class Experience extends React.Component {
       };
     });
 
-    //this.props.changeBackground("yellowgreen", "exp");
   }
 
   render() {
+    
     const items = this.state.itemList.map(item => (
       <ExperienceComponent
         key={item.id}

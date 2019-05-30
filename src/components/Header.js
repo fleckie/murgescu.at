@@ -27,7 +27,6 @@ class Header extends React.Component{
                 }
             }
         })
-        //this.props.toggleContent();
     }
 
     componentDidMount() {
@@ -88,14 +87,12 @@ class Header extends React.Component{
                 <Link to="/Education"
                     className="menuItems"
                     style={linkStyle}
-                    onClick={this.handleClick}
-                //onClick={() => props.changeBackground("lightgreen", "edu")}
+                   // onClick={this.handleClick("red")}
                 >Ausbildung</Link>
                 <Link to="/Experience" 
                     className="menuItems"
                     style={linkStyle}
                     onClick={this.handleClick}
-                //onClick={() => props.changeBackground("yellowgreen", "exp")}
                 >Berufserfahrung</Link>
                 <Link to="/Privat" 
                     className="menuItems"
