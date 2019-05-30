@@ -104,7 +104,8 @@ nav a:focus {
 	}
 	.burgerMenu {
 		display: initial;
-		margin: auto; 
+		margin: auto;
+		margin-top: 10px;
 	}
 
 	.menuItems {

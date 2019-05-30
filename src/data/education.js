@@ -1,7 +1,7 @@
 const educationData = [
     {
         id: 1,
-        stateCounter: 0,
+        status: "start",
         name: "Bachelorstudium Computer Science and Digital Communications",
         timeframe: "2018 - laufend",
         location: "FH Campus Wien",
@@ -10,7 +10,7 @@ const educationData = [
     },
     {   
         id: 2,
-        stateCounter: 0,
+        status: "start",
         name:"Bachelorstudium Soziologie",
         timeframe:"2010 - 2016",
         location: "Universität Wien",
@@ -19,7 +19,7 @@ const educationData = [
     },
     {   
         id: 3,
-        stateCounter: 0,
+        status: "start",
         name: "WIKU Realgymnasium",
         timeframe: "2001 - 2009",
         location: "Bruck a.d. Leitha",

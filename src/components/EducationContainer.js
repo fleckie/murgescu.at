@@ -12,48 +12,35 @@ class Education extends React.Component{
         this.handleChange = this.handleChange.bind(this)
     }
 
-    handleChange(id){
-        setTimeout(() =>{
+    handleChange(id){ 
             this.setState(prevState =>{
                 const updatedData = prevState.itemList.map(item =>{
-                    if(item.id === id){
-                       
-                        if (item.stateCounter === 0){
-                     
-                            item.stateCounter = 1
-                            
-                        }
-                        else if (item.stateCounter %2 === 0){
-                            item.stateCounter = 1
-                        }
-                        else if (item.stateCounter %2 === 1){
-                            item.stateCounter = 2
-                
+                    if (item.id === id) {
+                        if (item.status === "start") {
+                          item.status = "focused";
+                        } else if (item.status === "focused") {
+                          item.status = "rewind";
+                        } else if (item.status === "rewind") {
+                          item.status = "focused";
                         }
                     }
-                    else {
-                        if(item.stateCounter === 0){
-                            item.stateCounter = 0
+                    else{
+                        if (item.status === "focused"){
+                            item.status = "rewind"
                         }
-                        else {
-                            item.stateCounter = 2
-                        }
-                      
                     }
-                    return item
-                })
-                return{
-                    itemList: updatedData
+                      return item;
+                    });
+                    return {
+                      itemList: updatedData
                 }
             })
-
-        } ,0,id)
     }
 
     componentDidMount() {
         this.setState(prevState =>{
             const updatedState = prevState.itemList.map(item =>{
-                item.stateCounter = 0
+                item.status = "start"
                 return item
             })
             return {
@@ -61,13 +48,21 @@ class Education extends React.Component{
             }
         })
         //this.props.changeBackground("lightgreen", "edu");
+        
+        var edu = document.getElementsByClassName("eduContainer")[0];
+        var edub = edu.getBoundingClientRect();
+        console.log("parent=" ,edub);
+
+        var card = document.getElementsByClassName("eduInnerCard")[1];
+        var cardp = card.getBoundingClientRect();
+        console.log("child=", cardp);
     }
 
     render(){
         
         const items = this.state.itemList.map(item => <EducationComponent key={item.id} item={item} handleChange ={this.handleChange} />)
         return(
-            <div className="eduContainer">
+            <div className="eduContainer" id="edu">
             {items}
             </div>
         )
