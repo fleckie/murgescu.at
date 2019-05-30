@@ -47,9 +47,11 @@ function ExperienceComponent(props) {
       };
     } else if (props.item.status === "hidden") {
       containerStyle = {
-        /*animation: "fade-out 0.5s ease both",
-                zIndex: "-2",*/
-        status: "hidden"
+        animation: "fade-out 0.5s ease both",
+        zIndex: "-2",
+        pointerEvents: "none"
+     
+          
       };
     }
   }

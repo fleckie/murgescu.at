@@ -7,6 +7,7 @@ function EducationComponent(props){
     var w = Math.max(document.documentElement.clientWidth, window.innerWidth || 0);
     let containerStyle
 
+
     if (w < 1100){
         switch (props.item.status) {
             case "start":
@@ -36,15 +37,15 @@ function EducationComponent(props){
         }
         else if (props.item.status === "focused") {
             containerStyle = {
-                animation: "edu-move-right" + props.item.id + " 1s ease both",
+                animation: "edu-focus-element 1s ease both"
             }   
         }
 
         else if (props.item.status === "rewind") {
             containerStyle = {
-                animation: "edu-move-left" + props.item.id + " 1s ease",
-                animationDirection: "reverse"
+               animation: "edu-rewind-id" + props.item.id + " 1s ease both"
             }
+            
         }   
     }
         

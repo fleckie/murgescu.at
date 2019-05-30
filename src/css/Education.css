@@ -1,3 +1,8 @@
+:root {
+  --targetX: 0;
+  --targetY: 0;
+}
+
 .eduContainer {
   width: 50%;
   margin: auto;
@@ -82,72 +87,51 @@ h3 {
   }
 }
 
-@keyframes edu-move-right1 {
+@keyframes edu-focus-element {
   0% {
-    -webkit-transform: translateX(0);
-  }
-  100% {
-    -webkit-transform: translateX(150%);
-  }
-}
-
-@keyframes edu-move-right2 {
-  0% {
-    -webkit-transform: translateX(0) translateY(0);
     transform: translateX(0) translateY(0);
   }
   50% {
-    -webkit-transform: translateX(150%);
+    transform: translateX(var(--targetX)) translateY(0);
   }
-  100% {
-    -webkit-transform: translateY(-145%) translateX(150%);
+
+  100%{
+    transform: translateX(var(--targetX)) translateY(var(--targetY));
   }
 }
 
-@keyframes edu-move-right3 {
-  0% {
-    -webkit-transform: translateX(0) translateY(0);
+@keyframes edu-rewind-id1 {
+  0%{
+    transform: translateX(var(--originXEduId1)) translateY(var(--originYEduId1));
+  }
+  50%{
+    transform: translateX(var(--originXEduId1)) translateY(0);
+  }
+  100%{
     transform: translateX(0) translateY(0);
   }
-  50% {
-    -webkit-transform: translateX(150%);
-  }
-  100% {
-    -webkit-transform: translateY(-250%) translateX(150%);
-  }
 }
 
-@keyframes edu-move-left1 {
-  0% {
-    -webkit-transform: translateX(0);
+@keyframes edu-rewind-id2 {
+  0%{
+    transform: translateX(var(--originXEduId2)) translateY(var(--originYEduId2));
   }
-  100% {
-    -webkit-transform: translateX(150%);
+  50%{
+    transform: translateX(var(--originXEduId2)) translateY(0);
   }
-}
-
-@keyframes edu-move-left2 {
-  0% {
-    -webkit-transform: translateX(0) translateY(0);
+  100%{
     transform: translateX(0) translateY(0);
   }
-  50% {
-    -webkit-transform: translateX(150%);
-  }
-  100% {
-    -webkit-transform: translateY(-145%) translateX(150%);
-  }
 }
 
-@keyframes edu-move-left3 {
-  0% {
-    -webkit-transform: translateX(0) translateY(0);
+@keyframes edu-rewind-id3 {
+  0%{
+    transform: translateX(var(--originXEduId3)) translateY(var(--originYEduId3));
+  }
+  50%{
+    transform: translateX(var(--originXEduId3)) translateY(0);
+  }
+  100%{
     transform: translateX(0) translateY(0);
-  }
-  50% {
-    -webkit-transform: translateX(150%);
-  }
-  100% {
-    -webkit-transform: translateY(-250%) translateX(150%);
   }
 }
