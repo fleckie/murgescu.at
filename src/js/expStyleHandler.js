@@ -55,3 +55,5 @@ function expStyleHandler(props) {
 }
 
 export default expStyleHandler;
+
+//eventuell hier mit translate und classenNamen arbeiten - besser?

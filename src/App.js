@@ -15,7 +15,7 @@ import {
   withRouter
 } from "react-router-dom";
 import { TransitionGroup, CSSTransition } from "react-transition-group";
-import backgroundTransition from "./js/BackgroundTransition";
+import backgroundTransition from "./js/backgroundTransition";
 
 class App extends React.Component {
   constructor() {
