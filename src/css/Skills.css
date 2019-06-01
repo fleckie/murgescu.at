@@ -2,6 +2,7 @@
 .staggered-list-content {
     width: 30%;
     margin: 2rem auto;
+    margin-left: 10%;
     animation: "edu-slide-in-bottom" 1s ease both;
   }
 
@@ -33,15 +34,15 @@
   .avatar {
     border-radius: 50%;
     margin-right: 2rem;
-    width: 4rem;
-    height: 4rem;
+    width: 6rem;
+    height: 6rem;
     background: inherit;
     object-fit: cover;
 
   }
   .avatarExpanded {
-    width: 8rem;
-    height: 8rem;
+    width: 9rem;
+    height: 9rem;
     margin-right: 0;
     margin-bottom: 1rem;
   }
@@ -94,21 +95,14 @@
     height: 5rem;
   }
 
-  .preview{
-    position:absolute;
-    right: 10%;
-    top: 30%;
-    width: 30%;
-    height: 30%;
-    animation: "float-in-right" 1s ease both;
-  }
-
-
+ 
   @keyframes float-in-right {
     0%{
-      transform: translateX(100px);
+      opacity: 0;
+      transform: translateX(1000px);
     }
     100%{
+      opacity: 1;
       transform: translateX(0);
     }
 

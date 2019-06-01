@@ -9,7 +9,7 @@
 	
 body {
 	font-family: 'HKGrotesk';
-	overflow-y: hidden;
+	overflow: hidden;
 }
 
 .murgescu{

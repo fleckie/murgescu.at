@@ -4,6 +4,7 @@ const skillsData = [
         name: "Java Script",
         img: "/img/js.png",
         preview: "/img/gigstorm.png",
+        gif: "/img/gigstorm.gif",
         description: "Webdevelopment-Entwicklung in HTML, CSS & Javascript",
         info: [
             "JavaScript",
