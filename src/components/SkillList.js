@@ -2,6 +2,8 @@ import React from "react"
 import "../css/Skills.css"
 import listData from "../data/listData"
 import {Flipper, Flipped} from "react-flip-toolkit"
+import skillsData from "../data/skillsData"
+
 
 const shouldFlip = id => (prevDecisionData, currentDecisionData) =>
   id === prevDecisionData || id === currentDecisionData
@@ -17,18 +19,20 @@ function ListItem (props) {
                         <Flipped flipId={`avatar-${props.id}`}
                         stagger="card-content"
                         shouldFlip={shouldFlip(props.id)}>
-                            <div className="avatar"/>
+                            <img className="avatar" src={props.item.img}/>
                         </Flipped>
                         <div className="description"> 
-                        {listData.map (i => (
+                        {props.item.info.map (i => (
                             <Flipped flipId={`description-${props.id}-${i}`} 
                             stagger="card-content"
                             shouldFlip={shouldFlip(props.id)}
                             key={i}>
-                            <div />
+                            <div>
+                            {i}
+                            </div>
                              </Flipped>
                         ))}
-                        </div>
+                        </div> 
                     </div>
                 </Flipped>
             </div>
@@ -45,25 +49,30 @@ function ExpandedListItem (props){
             setTimeout(() => {
             el.classList.add("animated-in")
         }, 600)
-    }}>
+        }}>
             <div className="expandedListItem" onClick={() => props.onClick(props.id)}>
                 <Flipped inverseFlipId={`listItem-${props.id}`}>
                     <div className="expandedListItemContent">
                         <Flipped flipId={`avatar-${props.id}`} stagger="card-content">
-                            <div className="avatar avatarExpanded"/>
+                            <img className="avatar avatarExpanded" src={props.item.img}/> 
                         </Flipped>
                         <div className="description"> 
-                            {listData.map(i => (
+                            {props.item.info.map(i => (
                                 <Flipped flipId={`description-${props.id}-${i}`}  
                                 stagger="card-content"
                                 key={i}>
-                                    <div />
+                                    <div>
+                                    {i}
+                                    </div>
                                 </Flipped>   
                             ))}
-                        </div>
+                        </div> 
                         <div className="additional-content"> 
-                        {listData.map(i => <div key={i} />)}       
-                        </div>
+                            {listData.map(i => <div key={i} />)}       
+                      </div>
+                      <div>
+                        <img className="preview" src="/img/gigstorm.png" />
+                      </div>
                     </div>
                </Flipped>
             </div>

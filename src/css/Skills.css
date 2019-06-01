@@ -1,7 +1,8 @@
 .staggered-list-content {
-    width: 400px;
+    width: 30%;
     margin: 2rem auto;
     animation: "edu-slide-in-bottom" 1s ease both;
+
   }
 
   .list {
@@ -10,9 +11,11 @@
     flex-direction: column;
     height: 100vh;
     padding: 0;
+ 
   }
   .list li {
     width: 100%;
+
   }
   .list li + li {
     margin-top: 1rem;
@@ -20,7 +23,7 @@
   .listItem {
     width: 100%;
     cursor: pointer;
-    background-color: whitesmoke;
+    /*background-color: whitesmoke; */
   }
   .listItemContent {
     display: flex;
@@ -29,11 +32,13 @@
     padding: 1rem;
   }
   .avatar {
+    border-radius: 50%;
+    margin-right: 2rem;
     width: 4rem;
     height: 4rem;
-    border-radius: 100px;
-    background-color: #282c34;
-    margin-right: 2rem;
+    background: inherit;
+    object-fit: cover;
+
   }
   .avatarExpanded {
     width: 8rem;
@@ -41,17 +46,25 @@
     margin-right: 0;
     margin-bottom: 1rem;
   }
+
+  .description{
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    align-items: center;
+  }
+
   .description > div {
-    background-color: #282c34;
-    width: 14rem;
+    width: 8rem;
     border-radius: 6px;
-    height: 0.5rem;
+    /*background: grey; */
+
   }
   .description > div:nth-of-type(2) {
     width: 11rem;
   }
   .description > div:nth-of-type(3) {
-    width: 8rem;
+    width: 14rem;
   }
   .description > div + div {
     margin-top: 1rem;
@@ -74,6 +87,7 @@
   .additional-content {
     width: 100%;
     margin-top: 2rem;
+    display: none;
   }
   
   .additional-content > div {
@@ -81,4 +95,12 @@
     border-radius: 3px;
     background-color: #282c34;
     height: 5rem;
+  }
+
+  .preview{
+    height: 50%;
+    width: 60%;
+    position: absolute;
+    right: 10%;
+
   }

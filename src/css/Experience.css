@@ -1,5 +1,5 @@
 .expContainer {
-  position: absolute;
+  position:absolute;
   left: 5%;
   right: 5%;
   overflow: hidden;
@@ -9,6 +9,7 @@
   display: grid;
   grid-template-columns: 33.3%  33.3%  33.3%;
   justify-content: space-evenly;
+
 }
 
 .expInnerCard {

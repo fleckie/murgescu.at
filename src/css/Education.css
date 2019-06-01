@@ -4,12 +4,11 @@
 }
 
 .eduContainer {
+  position:absolute;
+  left: 10%;
   width: 50%;
   margin: auto;
   margin-top: 10px;
-  display: flex;
-  flex-direction: column;
-  float: left;
   font-size: 1em;
   z-index: 1;
   align-self: center;
