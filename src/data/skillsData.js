@@ -3,6 +3,7 @@ const skillsData = [
         id:1,
         name: "Java Script",
         img: "/img/js.png",
+        preview: "/img/gigstorm.png",
         description: "Webdevelopment-Entwicklung in HTML, CSS & Javascript",
         info: [
             "JavaScript",
@@ -14,6 +15,7 @@ const skillsData = [
         id:2,
         name: "React",
         img: "/img/react.png",
+        preview: "/img/murgescu.png",
         description: "Diese Website wurde in React entwickelt",
         info: [
             "React",
@@ -25,6 +27,7 @@ const skillsData = [
         id:3,
         name:"Java",
         img: "/img/java.jpg",
+        preview: "/img/tictac.png",
         description: "Basics in Java",
         info: [
             "Java",

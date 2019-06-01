@@ -1,15 +1,15 @@
+
 .staggered-list-content {
     width: 30%;
     margin: 2rem auto;
     animation: "edu-slide-in-bottom" 1s ease both;
-
   }
 
   .list {
     list-style-type: none;
     display: flex;
     flex-direction: column;
-    height: 100vh;
+    height: 70vh;
     padding: 0;
  
   }
@@ -23,7 +23,6 @@
   .listItem {
     width: 100%;
     cursor: pointer;
-    /*background-color: whitesmoke; */
   }
   .listItemContent {
     display: flex;
@@ -57,7 +56,6 @@
   .description > div {
     width: 8rem;
     border-radius: 6px;
-    /*background: grey; */
 
   }
   .description > div:nth-of-type(2) {
@@ -76,7 +74,6 @@
   }
   .expandedListItem {
     cursor: pointer;
-    background-color: whitesmoke;
   }
   .expandedListItemContent {
     padding: 2rem;
@@ -98,9 +95,21 @@
   }
 
   .preview{
-    height: 50%;
-    width: 60%;
-    position: absolute;
+    position:absolute;
     right: 10%;
+    top: 30%;
+    width: 30%;
+    height: 30%;
+    animation: "float-in-right" 1s ease both;
+  }
+
+
+  @keyframes float-in-right {
+    0%{
+      transform: translateX(100px);
+    }
+    100%{
+      transform: translateX(0);
+    }
 
   }

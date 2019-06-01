@@ -3,7 +3,7 @@ import {ListItem, ExpandedListItem} from "./SkillList"
 import listData from "../data/listData"
 import {Flipper, Flipped} from "react-flip-toolkit"
 import skillsData from "../data/skillsData"
-
+import PreviewLoader from "./PreviewLoader"
 class Skills extends React.Component{
     constructor(){
         super()
@@ -52,7 +52,9 @@ class Skills extends React.Component{
                         );
                     })}
                     </ul>
+               
                 </Flipper>
+                <PreviewLoader id = {this.state.focused} />
                  </div>
         );
       }
