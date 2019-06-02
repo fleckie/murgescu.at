@@ -23,7 +23,7 @@ function PreviewPlayer(props){
         className="preview"/>
         }   
         </div>
-        )}
+        )} 
      else {
          return <div></div>
      }
