@@ -1,3 +1,18 @@
+@font-face {
+	font-family: 'HKGrotesk';
+	src: url('../fonts/HKGrotesk-Light.otf');
+	font-weight: normal;
+	font-style: normal;
+}
+
+
+@font-face {
+    font-family: 'HKGrotesk';
+    src: url('../fonts/HKGrotesk-Bold.otf') format('truetype');
+    font-weight: bold;
+    font-style: normal;
+}
+
 :root {
   -webkit-touch-callout: none;
   -webkit-user-select: none;
@@ -12,6 +27,8 @@
 *{
   padding: 5px;
   color: #787878;
+  font-family: 'HKGrotesk';
+
 }
 
 .page-fade-appear {

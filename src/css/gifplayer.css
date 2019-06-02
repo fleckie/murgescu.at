@@ -1,16 +1,14 @@
 .gif_player {
-  position:absolute;
-  right: 10%;
-  top: 25%;
-  width: 50%;
-  height: 50%;
+
   animation: "float-in-right" 1s ease both;
+  -webkit-animation: "float-in-right" 1s ease both;
   -webkit-user-select: none;
      -moz-user-select: none;
       -ms-user-select: none;
           user-select: none;
   -webkit-touch-callout: none;
-  -webkit-tap-highlight-color: transparent; }
+  -webkit-tap-highlight-color: transparent;
+ }
   
   .gif_player .play_button {
     background-color: rgba(0, 0, 0, 0.5);
@@ -25,7 +23,7 @@
     opacity: 1;
     padding: 14px 10px;
     position: absolute;
-    top: 50%;
+    top: 45%;
     transform: translate(-50%, -50%) scale(1) rotate(0deg);
     transition: transform 0.4s, opacity 0.4s; }
     .gif_player .play_button:hover {
@@ -39,3 +37,25 @@
   .gif_player img {
     max-width: 100%; }
 
+    @keyframes float-in-right {
+      0%{
+        opacity: 0;
+        transform: translateX(1000px);
+      }
+      100%{
+        opacity: 1;
+        transform: translateX(0);
+      }
+    }
+
+    @-webkit-keyframes float-in-right{
+      0%{
+        opacity: 0;
+        transform: translateX(1000px);
+      }
+      100%{
+        opacity: 1;
+        transform: translateX(0);
+      }
+    }
+  

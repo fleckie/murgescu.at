@@ -4,24 +4,23 @@ import GifPlayer from "react-gif-player"
 import "../css/gifplayer.css"
 
 function PreviewPlayer(props){
-    let focusedElement
-    let url
-    let gif
-    focusedElement = skillsData.find(item =>{
+    let focusedElement = skillsData.find(item =>{
           return item.id === props.id
       })
-
-    url = focusedElement ? focusedElement.preview : ""
-    gif = focusedElement ? focusedElement.gif : ""
+    let gifPreview = focusedElement ? focusedElement.preview : null
+    let gif = focusedElement ? focusedElement.gif : null
+    let example = focusedElement ? focusedElement.example : null
+    
 
      if (focusedElement != null) {
         return ( 
         <div className="preview">
+            <h2>{example.name}</h2>
+            <a href={example.link}>Git-Repo</a>
+            <p>{example.description}</p>
         <GifPlayer
         gif={gif}
-        still={url} 
-        className="preview"/>
-        }   
+        still={gifPreview} />
         </div>
         )} 
      else {

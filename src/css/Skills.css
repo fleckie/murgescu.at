@@ -50,8 +50,10 @@
   .description{
     display: flex;
     flex-direction: column;
-    text-align: center;
     align-items: center;
+    font-weight: lighter;
+    font-variant: small-caps;
+    font-size: 1.5em;
   }
 
   .description > div {
@@ -70,8 +72,8 @@
   }
   .expandedListItem .description {
     display: flex;
-    align-items: center;
     flex-direction: column;
+    text-align: center;
   }
   .expandedListItem {
     cursor: pointer;
@@ -96,13 +98,28 @@
   }
 
  
-  @keyframes float-in-right {
-    0%{
-      opacity: 0;
-      transform: translateX(1000px);
-    }
-    100%{
-      opacity: 1;
-      transform: translateX(0);
-    }
+.preview{
+  display: flex;
+  flex-direction:column;
+  position:absolute;
+  right: 10%;
+  top: 15%;
+  width: 50%;
+  height: 50%;
+}
+
+.preview h2, .preview a, .preview p {
+  animation: float-in-top 1s ease both;
+  text-align: center;
+}
+
+@keyframes float-in-top {
+  0%{
+    transform: translateY(-100%);
+    opacity: 0;
   }
+  100%{
+    transform: translateY(0);
+    opacity:1
+  }
+}
