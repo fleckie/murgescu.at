@@ -1,8 +1,7 @@
 import React from "react";
-import "../css/Skills.css";
-import listData from "../data/listData";
-import { Flipper, Flipped } from "react-flip-toolkit";
-import skillsData from "../data/skillsData";
+import "./Projects.css";
+import listData from "./listData";
+import { Flipped } from "react-flip-toolkit";
 
 const shouldFlip = id => (prevDecisionData, currentDecisionData) =>
   id === prevDecisionData || id === currentDecisionData;

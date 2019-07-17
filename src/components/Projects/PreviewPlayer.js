@@ -1,7 +1,7 @@
 import React from "react"
-import skillsData from "../data/skillsData"
+import skillsData from "./projectsData"
 import GifPlayer from "react-gif-player"
-import "../css/gifplayer.css"
+import "./previewPlayer.css"
 
 function PreviewPlayer(props){
     let focusedElement = skillsData.find(item =>{

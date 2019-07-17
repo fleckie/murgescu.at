@@ -1,5 +1,5 @@
 import React from "react"
-import eduStyleHandler from "../js/eduStyleHandler"
+import eduStyleHandler from "./eduStyleHandler"
 
 function EducationComponent(props){
     return(

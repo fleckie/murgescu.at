@@ -1,14 +1,13 @@
 @font-face {
 	font-family: 'HKGrotesk';
-	src: url('../fonts/HKGrotesk-Light.otf');
+	src: url('/fonts/HKGrotesk-Light.otf');
 	font-weight: normal;
 	font-style: normal;
 }
 
-
 @font-face {
     font-family: 'HKGrotesk';
-    src: url('../fonts/HKGrotesk-Bold.otf') format('truetype');
+    src: url('/fonts/HKGrotesk-Bold.otf') format('truetype');
     font-weight: bold;
     font-style: normal;
 }

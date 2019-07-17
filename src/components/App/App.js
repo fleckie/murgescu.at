@@ -1,12 +1,12 @@
 import React from "react";
-import "./css/App.css";
-import Header from "./components/Header";
-import Footer from "./components/Footer";
-import Home from "./components/Home";
-import Skills from "./components/Skills";
-import Education from "./components/EducationContainer";
-import Experience from "./components/ExperienceContainer";
-import Privat from "./components/Privat";
+import "./App.css";
+import Header from "../Header/Header";
+import Footer from "../Footer";
+import Home from "../Home/Home";
+import Skills from "../Projects/Projects";
+import Education from "../Education/Education";
+import Experience from "../Experience/Experience";
+import Privat from "../Privat/Privat";
 import {
   BrowserRouter as Router,
   Route,
@@ -15,7 +15,7 @@ import {
   withRouter
 } from "react-router-dom";
 import { TransitionGroup, CSSTransition } from "react-transition-group";
-import backgroundTransition from "./js/backgroundTransition";
+import backgroundTransition from "../../js/backgroundTransition";
 
 class App extends React.Component {
   constructor() {

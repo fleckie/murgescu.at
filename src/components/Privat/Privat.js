@@ -1,6 +1,6 @@
 import React from "react"
-import {ListItem, ExpandedListItem} from "./SkillList"
-import listData from "../data/listData"
+import {ListItem, ExpandedListItem} from "../Projects/ProjectList"
+import listData from "../Projects/listData"
 import {Flipper, Flipped} from "react-flip-toolkit"
 
 class Privat extends React.Component{
@@ -14,8 +14,8 @@ class Privat extends React.Component{
     render() {
         return (
             <div>
-                test
-                 </div>
+                in Progress
+            </div>
         );
       }
 }

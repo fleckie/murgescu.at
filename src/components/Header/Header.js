@@ -1,5 +1,5 @@
 import React from "react"
-import "../css/Header.css"
+import "./Header.css"
 import { BrowserRouter as Router, Route, Link } from "react-router-dom";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 
@@ -82,12 +82,11 @@ class Header extends React.Component{
                     className="menuItems"
                     style={linkStyle}
                     onClick={this.handleClick}>
-                    IT Skills </Link>
+                    Projekte </Link>
                    
                 <Link to="/Education"
                     className="menuItems"
                     style={linkStyle}
-                   // onClick={this.handleClick("red")}
                 >Ausbildung</Link>
                 <Link to="/Experience" 
                     className="menuItems"

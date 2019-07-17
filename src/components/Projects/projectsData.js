@@ -1,4 +1,4 @@
-const skillsData = [
+const projectsData = [
     {
         id:1,
         name: "Java Script",
@@ -7,7 +7,7 @@ const skillsData = [
         gif: "/img/gigstorm.gif",
         description: "Webdevelopment-Entwicklung in HTML, CSS & Javascript",
         info: [
-            "HTML  CSS JAVASCRIPT"
+            "GigStorm"
            
         ],
         example: {
@@ -23,7 +23,7 @@ const skillsData = [
         preview: "/img/murgescu.png",
         description: "Diese Website wurde in React entwickelt",
         info: [
-            "React"
+            "Murgescu.at"
             
         ],
         example: {
@@ -39,7 +39,7 @@ const skillsData = [
         preview: "/img/tictac.png",
         description: "Basics in Java",
         info: [
-            "Java",
+            "Tic Tac Toe",
         ],
         example: {
             name: "Tic Tac Toe",
@@ -49,4 +49,4 @@ const skillsData = [
     }
 ]
 
-export default skillsData
+export default projectsData

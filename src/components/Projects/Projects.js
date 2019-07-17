@@ -1,10 +1,10 @@
 import React from "react"
-import {ListItem, ExpandedListItem} from "./SkillList"
-import listData from "../data/listData"
+import {ListItem, ExpandedListItem} from "./ProjectList"
 import {Flipper, Flipped} from "react-flip-toolkit"
-import skillsData from "../data/skillsData"
+import projectsData from "./projectsData"
 import PreviewPlayer from "./PreviewPlayer"
-class Skills extends React.Component{
+
+class Projects extends React.Component{
     constructor(){
         super()
         this.state = {
@@ -36,7 +36,7 @@ class Skills extends React.Component{
                     }}
                 decisionData={this.state.focused}>
                     <ul className="list">
-                    {skillsData.map(item => {
+                    {projectsData.map(item => {
                         return (
                         <li key={item.id}>
                             {item.id === this.state.focused ? (
@@ -60,4 +60,4 @@ class Skills extends React.Component{
       }
 }
 
-export default Skills
+export default Projects

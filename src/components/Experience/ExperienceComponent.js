@@ -1,5 +1,5 @@
 import React from "react";
-import expStyleHandler from "../js/expStyleHandler"
+import expStyleHandler from "./expStyleHandler"
 
 function ExperienceComponent(props) {
   return (
