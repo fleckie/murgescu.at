@@ -4,30 +4,29 @@
 }
 
 .eduContainer {
-  position:absolute;
-  left: 10%;
-  width: 50%;
   margin: auto;
-  margin-top: 10px;
-  font-size: 1em;
+  margin-top: 3em;
+  font-size: 0.5em;
   z-index: 1;
   align-self: center;
+  position: relative;
+  vertical-align: middle;
 }
 
-.eduInnerCard {
-  float: left;
-  max-width: 50%;
-  width: 50%;
-  padding: 20px;
-  text-align: left;
+.eduComponent {
+  height: 100%;
+  padding: 1px;
+  margin-top: 5em;
+  position: relative;
+  align-self: center;
+  text-align: center;
   color: #787878f3;
   cursor: pointer;
   -webkit-animation: slide-in-bottom 1s cubic-bezier(0.25, 0.46, 0.45, 0.94)
     0.5s both;
   animation: slide-in-bottom 1s cubic-bezier(0.25, 0.46, 0.45, 0.94) 0.5s both;
   z-index: 0;
-  margin-right: auto;
-}
+} 
 
 .eduDescription {
   animation: edu-slide-in-bottom 1s cubic-bezier(0.25, 0.46, 0.45, 0.94) 0.5s
@@ -112,5 +111,34 @@ h3 {
   }
   100%{
     transform: translateX(0) translateY(0);
+  }
+}
+
+@media screen and (min-width: 992px) {
+
+  .eduContainer {
+    position:absolute;
+    left: 10%;
+    width: 50%;
+    margin: auto;
+    margin-top: 10px;
+    font-size: 1em;
+    z-index: 1;
+    align-self: center;
+  }
+  
+  .eduComponent {
+    float: left;
+    max-width: 50%;
+    width: 50%;
+    padding: 20px;
+    text-align: left;
+    color: #787878f3;
+    cursor: pointer;
+    -webkit-animation: slide-in-bottom 1s cubic-bezier(0.25, 0.46, 0.45, 0.94)
+      0.5s both;
+    animation: slide-in-bottom 1s cubic-bezier(0.25, 0.46, 0.45, 0.94) 0.5s both;
+    z-index: 0;
+    margin-right: auto;
   }
 }

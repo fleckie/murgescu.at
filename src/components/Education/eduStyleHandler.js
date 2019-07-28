@@ -18,11 +18,17 @@ function EduAnimationHandler(props) {
           animation: "move-mid 1s ease both"
         };
         break;
-      case "rewind": {
+      case "rewind": 
         containerStyle = {
           animation: "move-back 1s ease both"
         };
-      }
+        break;
+      case "hidden": 
+        containerStyle = {
+          animation: "fade-out 0.5s ease both",
+          zIndex: "-2",
+          display: "none"
+        };
     }
   } else {
     if (props.item.status === "start") {

@@ -1,29 +1,27 @@
 .expContainer {
-  position:absolute;
-  left: 5%;
-  right: 5%;
-  overflow: hidden;
-  z-index: 1;
+  max-width: 100%;
   margin: auto;
-  margin-top: 50px;
-  display: grid;
-  grid-template-columns: 33.3%  33.3%  33.3%;
-  justify-content: space-evenly;
-
+  margin-top: -3%;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 }
 
 .expInnerCard {
+  max-width: 100%;
+  width: 100%;
   margin: auto;
-  margin: 30px 10px;
-  padding: 5px 10px;
+  margin-top: 3px;
+  padding: 0;
+  font-size: 0.5em;
   text-align: center;
-  color: #787878f3;
-  font-size: 0.8em;
-  cursor: pointer;
-  border-left-style: dashed;
-  border-right-style: dashed;
-  overflow: hidden;
+  border: none;
+}
 
+.fade-out{
+  visibility: hidden;
+  color:red;
 }
 
 .expDescription {
@@ -39,30 +37,36 @@ h3 {
   margin: 0px;
 }
 
-@media screen and (max-width: 1100px) {
-  * {
-    padding: 3px;
-  }
+
+/* MQs müssen hier sein (warum?) */
+
+@media screen and (min-width: 900px) {
+
+  
   .expContainer {
-    max-width: 100%;
-    margin: auto;
-    margin-top: -3%;
-    padding: 0;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
+  position:absolute;
+  left: 5%;
+  right: 5%;
+  overflow: hidden;
+  z-index: 1;
+  margin: auto;
+  margin-top: 50px;
+  display: grid;
+  grid-template-columns: 33.3%  33.3%  33.3%;
+  justify-content: space-evenly;
   }
 
   .expInnerCard {
-    max-width: 100%;
-    width: 100%;
-    margin: auto;
-    margin-top: 3px;
-    padding: 0;
-    font-size: 0.5em;
-    text-align: center;
-    border: none;
-    background: white;
+  margin: auto;
+  margin: 30px 10px;
+  padding: 5px 10px;
+  text-align: center;
+  color: #787878f3;
+  font-size: 0.8em;
+  cursor: pointer;
+  border-left-style: dashed;
+  border-right-style: dashed;
+  overflow: hidden;
   }
 
   h1, h2, h3 {

@@ -10,10 +10,10 @@ class Experience extends React.Component {
       itemList: data,
       focused: false
     };
-    this.handleChange = this.handleChange.bind(this);
+    this.onClick = this.onClick.bind(this);
   }
 
-  handleChange(id) {
+  onClick(id) {
     this.setState(prevState => {
       const updatedData = prevState.itemList.map(item => {
         if (item.id === id) {
@@ -63,7 +63,7 @@ class Experience extends React.Component {
       <ExperienceComponent
         key={item.id}
         item={item}
-        handleChange={this.handleChange}
+        onClick={this.onClick}
       />
     ));
     return <div className="expContainer">{items}</div>;

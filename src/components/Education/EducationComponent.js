@@ -3,8 +3,8 @@ import eduStyleHandler from "./eduStyleHandler"
 
 function EducationComponent(props){
     return(
-        <div className="eduInnerCard" 
-        onClick ={() => props.handleChange(props.item.id)}
+        <div className="eduComponent" 
+        onClick ={() => props.onClick(props.item.id)}
         style= {eduStyleHandler(props)}>
             <h2>{props.item.timeframe}</h2>
             <h1> {props.item.name} </h1>

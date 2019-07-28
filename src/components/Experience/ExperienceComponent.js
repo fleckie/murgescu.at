@@ -1,11 +1,12 @@
 import React from "react";
 import expStyleHandler from "./expStyleHandler"
 
+
 function ExperienceComponent(props) {
   return (
-    <div
+    <div 
       className="expInnerCard"
-      onClick={() => props.handleChange(props.item.id)}
+      onClick={() => props.onClick(props.item.id)}
       style={expStyleHandler(props)}
     >
       <h2>{props.item.timeframe}</h2>
@@ -19,3 +20,4 @@ function ExperienceComponent(props) {
 }
 
 export default ExperienceComponent;
+

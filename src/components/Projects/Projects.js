@@ -55,7 +55,7 @@ class Projects extends React.Component{
                
                 </Flipper>
                 <PreviewPlayer id = {this.state.focused} />
-                 </div>
+            </div>
         );
       }
 }
