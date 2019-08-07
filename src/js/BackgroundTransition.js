@@ -2,7 +2,7 @@ function backgroundTransition(location) {
   let color;
   switch (location) {
     case "/":
-      color = "whitesmoke";
+      color = "#C7E5F8";
       break;
     case "/Skills":
       color = "#C7E5F8";

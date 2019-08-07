@@ -113,6 +113,124 @@
   text-align: center;
 }
 
+
+@media screen and (min-width: 900px) {
+
+  .staggered-list-content {
+    width: 30%;
+    margin: 2rem auto;
+    margin-left: 10%;
+    animation: "edu-slide-in-bottom" 1s ease both;
+  }
+
+  .list {
+    list-style-type: none;
+    display: flex;
+    flex-direction: column;
+    height: 70vh;
+    padding: 0;
+ 
+  }
+  .list li {
+    width: 100%;
+
+  }
+  .list li + li {
+    margin-top: 1rem;
+  }
+  .listItem {
+    width: 100%;
+    cursor: pointer;
+  }
+  .listItemContent {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    padding: 1rem;
+  }
+  .avatar {
+    border-radius: 50%;
+    margin-right: 2rem;
+    width: 6rem;
+    height: 6rem;
+    background: inherit;
+    object-fit: cover;
+
+  }
+  .avatarExpanded {
+    width: 9rem;
+    height: 9rem;
+    margin-right: 0;
+    margin-bottom: 1rem;
+  }
+
+  .description{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-weight: lighter;
+    font-variant: small-caps;
+    font-size: 1.5em;
+  }
+
+  .description > div {
+    width: 8rem;
+    border-radius: 6px;
+
+  }
+  .description > div:nth-of-type(2) {
+    width: 11rem;
+  }
+  .description > div:nth-of-type(3) {
+    width: 14rem;
+  }
+  .description > div + div {
+    margin-top: 1rem;
+  }
+  .expandedListItem .description {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+  }
+  .expandedListItem {
+    cursor: pointer;
+  }
+  .expandedListItemContent {
+    padding: 2rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  .additional-content {
+    width: 100%;
+    margin-top: 2rem;
+    display: none;
+  }
+  
+  .additional-content > div {
+    opacity: 0;
+    border-radius: 3px;
+    background-color: #282c34;
+    height: 5rem;
+  }
+
+ 
+  .preview{
+    display: flex;
+    flex-direction:column;
+    position:absolute;
+    right: 10%;
+    top: 15%;
+    width: 50%;
+    height: 50%;
+  }
+
+  .preview h2, .preview a, .preview p {
+    animation: float-in-top 1s ease both;
+    text-align: center;
+  }
+}
+
 @keyframes float-in-top {
   0%{
     transform: translateY(-100%);

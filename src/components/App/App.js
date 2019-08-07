@@ -21,7 +21,7 @@ class App extends React.Component {
   constructor() {
     super();
     this.state = {
-      toggleContent: true
+      toggleContent: false
     };
     this.toggleContent = this.toggleContent.bind(this);
   }
@@ -38,6 +38,22 @@ class App extends React.Component {
         };
       }
     });
+  }
+
+  componentDidMount(){
+    var w = Math.max(
+      document.documentElement.clientWidth,
+      window.innerWidth || 0
+    );
+    if (w > 1099){
+      this.setState(() =>{
+        return {
+          toggleContent: true
+        }
+      })
+    }
+    var location = this.props.location.pathname;
+    backgroundTransition(location);
   }
 
   componentDidUpdate(prevProps) {
@@ -71,7 +87,7 @@ class App extends React.Component {
               timeout={600}
             >
               <Switch location={this.props.location}>
-                <Route exact path="/" component={Home} />
+                <Route exact path="/" component={Skills} />
                 <Route exact path="/Skills" component={Skills} />
                 <Route exact path="/Education" component={Education} />
                 <Route path="/Experience" component={Experience} />

@@ -21,27 +21,17 @@ class Header extends React.Component{
                     menuVisible: !prevState.menuVisible
                 }
             }
-            else {
-                return {
-                    menuVisible: true
-                }
-            }
         })
+        console.log(this.state.menuVisible);
     }
 
     componentDidMount() {
         var w = Math.max(document.documentElement.clientWidth, window.innerWidth || 0);
         this.setState( () => {
-            if (w < 1100){
-                return {
-                    menuVisible: false
-                }
-            }
-            else {
                 return {
                     menuVisible: true
                 }
-            }
+            
         })
     }
     
@@ -52,26 +42,26 @@ class Header extends React.Component{
 
     render(){
         let linkStyle
-        let navStyle
-        if (this.state.menuVisible){
-            linkStyle = {
-                display: "initial",
-                animation: "menu-slide-in-bottom 0.6s cubic-bezier(0.250, 0.460, 0.450, 0.940) both"
+        var w = Math.max(document.documentElement.clientWidth, window.innerWidth || 0);
+        if (w < 1100){
+            if (this.state.menuVisible){
+                linkStyle = {
+                    display: "initial",
+                    animation: "menu-slide-in-bottom 0.6s cubic-bezier(0.250, 0.460, 0.450, 0.940) both"
+                }
             }
-            navStyle = {   
+            else {
+                console.log("menu sollte verschwinden")
+                linkStyle = {
+                    display: "none"
+                }
             }
         }
-        else {
-            linkStyle = {
-                display: "none"
-            }
-            navStyle = {
-            }
-        }
+   
 
         return (
-            <nav className="cl-effect-7" style={navStyle}>
-                    <Link to="/" className="murgescu"
+            <nav className="cl-effect-7">
+                    <Link to="/Skills" className="murgescu"
                      onClick={this.handleClick} >
                      Murgescu.at</Link>
                     <FontAwesomeIcon 
@@ -87,17 +77,18 @@ class Header extends React.Component{
                 <Link to="/Education"
                     className="menuItems"
                     style={linkStyle}
+                    onClick={this.handleClick}
                 >Ausbildung</Link>
                 <Link to="/Experience" 
                     className="menuItems"
                     style={linkStyle}
                     onClick={this.handleClick}
                 >Berufserfahrung</Link>
-                <Link to="/Privat" 
+                {/*<Link to="/Privat" 
                     className="menuItems"
                     style={linkStyle}
                      onClick={this.handleClick}>
-                 Privates </Link>
+                 Privates </Link>*/}
             </nav>
         )
 
